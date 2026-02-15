@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jan 💖</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        padding: 30px 20px;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 400px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        opacity: 0.9;
+    }
+
+    .buttons {
+        position: relative;
+        height: 120px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+    }
+
+    #yesBtn {
+        background: #ff2e63;
+        color: white;
+        left: 20%;
+    }
+
+    #yesBtn:hover {
+        transform: scale(1.1);
+        background: #ff004c;
+    }
+
+    #noBtn {
+        background: #444;
+        color: white;
+        left: 55%;
+    }
+
+    #message {
+        margin-top: 15px;
+        font-weight: bold;
+        min-height: 24px;
+    }
+
+    #result {
+        margin-top: 20px;
+        display: none;
+    }
+
+    img {
+        width: 200px;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 400px) {
+        h1 { font-size: 1.5rem; }
+        button { font-size: 14px; padding: 10px 20px; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Jan 💖</h1>
+    <p>Will you be my Valentine?</p>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💕</button>
+        <button id="noBtn">No 😢</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div id="result">
+        <h2>Yayyyyy Jan ❤️</h2>
+        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+        <p>Happy Valentine ma.<br>By your living ROBOT 🤖💘</p>
+    </div>
+
+    <div class="footer">Made with ❤️ only for you</div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const message = document.getElementById("message");
+    const result = document.getElementById("result");
+
+    const captions = [
+        "Are you sure Jan? 🥺",
+        "Think again ma ❤️",
+        "Don't break your robot's heart 🤖💔",
+        "I'll recharge with love 🔋💕",
+        "Pleaseee say yes 😍"
+    ];
+
+    let index = 0;
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+
+    function moveButton() {
+        const x = Math.random() * 250;
+        const y = Math.random() * 80;
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+        message.textContent = captions[index % captions.length];
+        index++;
+    }
+
+    yesBtn.addEventListener("click", () => {
+        result.style.display = "block";
+        message.textContent = "You made your robot the happiest 🤖❤️";
+        noBtn.style.display = "none";
+        yesBtn.style.display = "none";
+    });
+</script>
+
+</body>
+</html>
