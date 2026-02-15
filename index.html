@@ -5,164 +5,220 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Jan 💖</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #ff758c, #ff7eb3);
-        font-family: 'Segoe UI', sans-serif;
-        overflow: hidden;
-        text-align: center;
-        padding: 20px;
-    }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff4e8a, #ff99ac);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
 
-    .card {
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(12px);
-        padding: 30px 20px;
-        border-radius: 25px;
-        width: 100%;
-        max-width: 400px;
-        color: white;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    color: rgba(255,255,255,0.7);
+    animation: floatUp 6s linear infinite;
+}
 
-    h1 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
+    100% {
+        transform: translateY(-110vh) scale(1.8);
+        opacity: 0;
+    }
+}
 
-    p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        opacity: 0.9;
-    }
+.card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    padding: 30px 20px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 2;
+}
 
-    .buttons {
-        position: relative;
-        height: 120px;
-    }
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
 
-    button {
-        padding: 12px 25px;
-        font-size: 16px;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: 0.3s;
-        position: absolute;
-    }
+.question {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
 
-    #yesBtn {
-        background: #ff2e63;
-        color: white;
-        left: 20%;
-    }
+.buttons {
+    position: relative;
+    height: 120px;
+}
 
-    #yesBtn:hover {
-        transform: scale(1.1);
-        background: #ff004c;
-    }
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+}
 
-    #noBtn {
-        background: #444;
-        color: white;
-        left: 55%;
-    }
+#yesBtn {
+    background: #ff0055;
+    color: white;
+    left: 20%;
+    box-shadow: 0 4px 15px rgba(255,0,85,0.5);
+}
 
-    #message {
-        margin-top: 15px;
-        font-weight: bold;
-        min-height: 24px;
-    }
+#yesBtn:hover {
+    transform: scale(1.15);
+    background: #ff0033;
+}
 
-    #result {
-        margin-top: 20px;
-        display: none;
-    }
+#noBtn {
+    background: #333;
+    color: white;
+    left: 55%;
+}
 
-    img {
-        width: 200px;
-        border-radius: 15px;
-        margin-top: 10px;
-    }
+#message {
+    margin-top: 15px;
+    font-weight: 700;
+    min-height: 30px;
+    font-size: 1rem;
+}
 
-    .footer {
-        margin-top: 20px;
-        font-size: 0.9rem;
-        opacity: 0.8;
-    }
+#result {
+    margin-top: 20px;
+    display: none;
+}
 
-    @media (max-width: 400px) {
-        h1 { font-size: 1.5rem; }
-        button { font-size: 14px; padding: 10px 20px; }
-    }
+#result h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+#result p {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+img {
+    width: 200px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 400px) {
+    h1 { font-size: 1.6rem; }
+    .question { font-size: 1rem; }
+    button { font-size: 14px; padding: 10px 18px; }
+}
 </style>
 </head>
 
 <body>
 
 <div class="card">
-    <h1>Jan 💖</h1>
-    <p>Will you be my Valentine?</p>
+    <h1>JANU MA💖</h1>
+    <div class="question">WILL YOU BE MY VALENTINE?</div>
 
     <div class="buttons">
-        <button id="yesBtn">Yes 💕</button>
-        <button id="noBtn">No 😢</button>
+        <button id="yesBtn">YES 💕</button>
+        <button id="noBtn">NO 😢</button>
     </div>
 
     <div id="message"></div>
 
     <div id="result">
-        <h2>Yayyyyy Jan ❤️</h2>
-        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-        <p>Happy Valentine ma.<br>By your living ROBOT 🤖💘</p>
+        <h2>YAYYYYY AMMU ❤️</h2>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHU1MmpjeXF3MWIzeml3b2ZiY3M4ZDgwODJqcmcycmtxcDc0N3ZuZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wvYNSqBAMDVx8CEYkt/giphy.gif">
+        <p>HAPPY VALENTINE MA.<br>BY YOUR ROBOT💘</p>
     </div>
-
+   <hr>
     <div class="footer">Made with ❤️ only for you</div>
 </div>
 
 <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const message = document.getElementById("message");
-    const result = document.getElementById("result");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const message = document.getElementById("message");
+const result = document.getElementById("result");
 
-    const captions = [
-        "Are you sure Jan? 🥺",
-        "Think again ma ❤️",
-        "Don't break your robot's heart 🤖💔",
-        "I'll recharge with love 🔋💕",
-        "Pleaseee say yes 😍"
-    ];
+const captions = [
+    "Theriyama patturucha Ammu?😅",
+    "Yosichu sollu MA ❤️",
+    "Kandippa No sollanuma🙄",
+    "Yes paaka maranta pola 💕",
+];
 
-    let index = 0;
+let index = 0;
 
-    noBtn.addEventListener("mouseover", moveButton);
-    noBtn.addEventListener("click", moveButton);
+function moveButton() {
+    const x = Math.random() * 250;
+    const y = Math.random() * 80;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+    message.textContent = captions[index % captions.length];
+    index++;
+}
 
-    function moveButton() {
-        const x = Math.random() * 250;
-        const y = Math.random() * 80;
-        noBtn.style.left = x + "px";
-        noBtn.style.top = y + "px";
-        message.textContent = captions[index % captions.length];
-        index++;
-    }
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
 
-    yesBtn.addEventListener("click", () => {
-        result.style.display = "block";
-        message.textContent = "You made your robot the happiest 🤖❤️";
-        noBtn.style.display = "none";
-        yesBtn.style.display = "none";
-    });
+yesBtn.addEventListener("click", () => {
+    result.style.display = "block";
+    message.textContent = "YOU MADE YOUR ROBOT THE HAPPIEST 🤖❤️";
+    noBtn.style.display = "none";
+    yesBtn.style.display = "none";
+});
+
+/* Create Floating Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 400);
 </script>
 
 </body>
